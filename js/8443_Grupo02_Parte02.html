@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function getEventType(event) { 
+  document.getElementById("demo").innerHTML = event.type;
+}
+</script>
+</head>
+<body>
+
+<p onmousedown="getEventType(event)">
+Click on this paragraph. A message will tell what type of event was triggered.</p>
+
+<p id="demo"></p>
+
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #EEE
+    }
+
+    #str {
+        width: 800px;
+        padding: 20px;
+        height: auto;
+        font-family: sans-serif;
+        font-size: 40px;
+        margin: 200px auto;
+        color: #fff;
+        font-weight: bold;
+        background: #000
+    }
+</style>
+
+<!-- One Div Only -->
+<div id="str"></div>
+
+<script>
+    var string = "Hello I'm Laith Haleem Form Ghammas Love Developing Websites";
+    var str = string.split("");
+    var el = document.getElementById('str');
+    (function animate() {
+        str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running);
+        var running = setTimeout(animate, 90);
+    })();
+</script>
+</html>
